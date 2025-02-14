@@ -10,7 +10,7 @@ class myApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
         appBarTheme: AppBarTheme(
-          color: Colors.green,
+          // color: Colors.green,
           centerTitle: true,
         ),scaffoldBackgroundColor: Colors.white,
 
