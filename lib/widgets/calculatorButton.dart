@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 class buildButton extends StatelessWidget {
-  const buildButton({
+  String text;
+  Color ? color;
+  final VoidCallback onClick;
+
+  buildButton({
     super.key,
+    required this.text,
+    this.color,
+    required this.onClick,
   });
 
   @override
@@ -9,16 +16,15 @@ class buildButton extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey[850],
-                padding: EdgeInsets.all(24),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
-            ),
+        child: ElevatedButton(onPressed: onClick,style: ElevatedButton.styleFrom(
+          backgroundColor:color ?? Colors.grey[850],
+          padding: EdgeInsets.all(24),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+
+
+        ),
             child: Text(
-              '1',
-              style: TextStyle(fontSize: 25, color: Colors.white),
+              text,style:TextStyle(fontSize: 24,color: Colors.white,),
             )),
       ),
     );
